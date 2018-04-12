@@ -57,6 +57,17 @@ export default class Game extends React.Component {
         this.setState({showModel: !this.state.showModel})
     }
 
+    setNewGame() {
+        this.setState({newGame: !this.state.newGame})
+        this.setState({actualNum: Math.floor(Math.random() * 100 + 1)})
+        this.setState({currentFeedback: "Make your guess!"})
+        this.setState({guessCount: 0})
+        this.setState({guessList: []})
+        this.setState({showModel: false})
+        this.setState({showMain: true})
+        // this.setState({})
+    }
+
 
     compareNum() {
         console.log(this.state);
@@ -87,7 +98,7 @@ export default class Game extends React.Component {
 
         return (
             <div>
-                <Header showMod={this.state.showModel} showModButton={() => {this.showModelUpdate()}} showMainButton={() => {this.showMainUpdate()}}/>
+                <Header showMod={this.state.showModel} showModButton={() => {this.showModelUpdate()}} showMainButton={() => {this.showMainUpdate()}} showNewButton={() => {this.setNewGame()}}/>
                 <GuessSection feedback={this.state.currentFeedback} />
                 <GuessForm submit={guessNum => this.setGuessNum(guessNum)} /> {/*Included GuessForm directly over here instead of through Guest Section*/}
                 <GuessCount count={this.state.guessCount} />
