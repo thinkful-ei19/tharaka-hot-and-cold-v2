@@ -7,9 +7,10 @@ export default function GuessForm(props) {
         <form 
             onSubmit={event => {
                 event.preventDefault();
-                console.log(event.target.userGuess.value);
-                const userVal = event.target.userGuess.value;
+                // console.log(event.target.userGuess.value);
+                const userVal = parseInt(event.target.userGuess.value);
                 props.submit(userVal);
+                // props.compare();
                 event.target.userGuess.value = '';
         
         }}>
