@@ -12,6 +12,7 @@ export default class Game extends React.Component {
         super(props)
         this.state = {
             guessNum: null,
+            feedback: "Make your guess!"
         }
     }
 
@@ -24,8 +25,8 @@ export default class Game extends React.Component {
         return (
             <div>
                 <Header />
-                {/* <GuessSection feedback="Make your guess!" /> */}
-                <h2>Make your guess!</h2>
+                <GuessSection feedback={this.state.feedback} />
+               
                 <GuessForm submit={guessNum => this.setGuessNum(guessNum)} />
                 <GuessCount count={3} />
                 <GuessList guesses={[10, 15, 25]} />
