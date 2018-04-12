@@ -5,17 +5,6 @@ import InfoModal from './info-modal';
 
 import './header.css';
 
-// export default function Header(props) {
-//     return (
-//         <header>
-//             <TopNav />
-//             {/* <InfoModal /> */}
-//             <h1>HOT or COLD</h1>
-//         </header>
-//     );
-// };
-
-
 
 export default function Header(props) {
     return (

@@ -22,22 +22,3 @@ export default function GuessForm(props) {
     );
 };
 
-
-
-// export default function SearchForm(props) {
-//     return (
-//         <form onSubmit={e => e.preventDefault()}>
-//             <label htmlFor="search">Search</label>&emsp;
-//             <input
-//                 aria-controls="character-count"
-//                 type="search"
-//                 id="search"
-//                 name="search"
-//                 placeholder="Dale Cooper"
-//                 onChange={e => props.change(e.target.value)}//grabbing the value and passing it back to parent
-//             />
-//             {/* Dont need to pass back the value */}
-//             <button onClick={props.click}>Click ME</button>   
-//         </form>
-//     );
-// }
