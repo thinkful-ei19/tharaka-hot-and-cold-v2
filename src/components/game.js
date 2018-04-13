@@ -36,36 +36,44 @@ export default class Game extends React.Component {
     }
 
     setCurrentFeed(currentFeedback) {
-        this.setState({currentFeedback})
+        this.setState({currentFeedback});
     }
 
     setGuessCount(guessCount) {
-        this.setState({guessCount})
+        this.setState({guessCount});
     }
 
     setGuessList(guess) {
-        this.setState({guessList:[...this.state.guessList, guess]})
+        this.setState({guessList:[...this.state.guessList, guess]});
     }
     
 
     showModelUpdate() {
-        this.setState({showModel: !this.state.showModel})
+        this.setState({showModel: !this.state.showModel});
     }
 
     showMainUpdate() {
-        this.setState({showMain: !this.state.showMain})
-        this.setState({showModel: !this.state.showModel})
+        this.setState({showMain: !this.state.showMain});
+        this.setState({showModel: !this.state.showModel});
     }
 
     setNewGame() {
-        this.setState({newGame: !this.state.newGame})
-        this.setState({actualNum: Math.floor(Math.random() * 100 + 1)})
-        this.setState({currentFeedback: "Make your guess!"})
-        this.setState({guessCount: 0})
-        this.setState({guessList: []})
-        this.setState({showModel: false})
-        this.setState({showMain: true})
-        // this.setState({})
+        const newState = Object.assign({}, this.state);
+        newState.newGame = true;
+        newState.actualNum = Math.floor(Math.random() * 100 + 1);
+        newState.currentFeedback = "Make your guess!";
+        newState.guessCount = 0;
+        newState.guessList = [];
+        newState.showModel = false;//Dont need
+        newState.showMain = true;//Don't need
+        this.setState(newState);
+        // this.setState({newGame: !this.state.newGame})
+        // this.setState({actualNum: Math.floor(Math.random() * 100 + 1)})
+        // this.setState({currentFeedback: "Make your guess!"})
+        // this.setState({guessCount: 0})
+        // this.setState({guessList: []})
+        // this.setState({showModel: false})
+        // this.setState({showMain: true})
     }
 
 
